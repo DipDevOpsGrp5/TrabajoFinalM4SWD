@@ -1,7 +1,5 @@
 package com.devops.dxc.devops.model;
 
-import java.io.IOException;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.time.format.DateTimeFormatter;  
@@ -55,5 +53,20 @@ public class Util {
         double valor = serieArray.getJSONObject(0).getDouble("valor");
         return valor;
     }
-    
+
+	public static int getImpuesto(int sueldo, int dxc) {
+		int impuesto = 0;
+		if(sueldo > 1500000) {
+			impuesto = (int) (dxc * 0.1);
+		}
+		return impuesto;
+	}
+
+	public static int getSaldo(int ahorro, int dxc) {
+		int saldo = 0;
+		if ((ahorro - dxc) > 0) {
+			saldo = ahorro - dxc;
+		}
+		return saldo;
+	}    
 }

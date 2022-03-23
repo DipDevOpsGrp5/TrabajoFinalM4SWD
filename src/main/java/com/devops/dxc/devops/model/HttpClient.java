@@ -12,8 +12,6 @@ public class HttpClient {
 	public String sendGet(String url) throws IOException {
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		HttpGet httpGet = new HttpGet(url);
-		//httpGet.addHeader("User-Agent", USER_AGENT);
-		//httpGet.addHeader("Authorization", jwt);
 		CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
 
 		System.out.println("GET Response Status:: "
