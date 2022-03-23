@@ -23,7 +23,7 @@ public class Dxc implements Serializable{
 	public Dxc() {
 	}
 
-	public int getDxc() {
+	public int getDxc() throws Exception {
 		return Util.getDxc(ahorro,sueldo);
 	}
 	public void setDxc(int dxc) {
