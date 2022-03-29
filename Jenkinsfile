@@ -49,16 +49,17 @@
         }
         stage("Paso 6: Download and checkout Selenium project"){
             steps {
-                script {
-                    sh "echo 'Download and checkout Selenium project'"
-                    sh "sleep 60"
-                }
+               checkout(
+                        [$class: 'GitSCM',
+                        branches: [[name: "main" ]],
+                        userRemoteConfigs: [[url: 'https://github.com/DipDevOpsGrp5/TrabajoFinalM4SWD-selenium.git']]])
             }
         }
         stage("Paso 7: Run functional tests (Selenium)"){
             steps {
                 script {
-                    sh "echo 'Run Selenium tests'"
+                    sh "sleep 15"
+                    sh "mvn test"
                 }
             }
         }
