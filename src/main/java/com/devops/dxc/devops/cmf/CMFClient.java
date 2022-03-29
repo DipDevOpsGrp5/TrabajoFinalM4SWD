@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class CMFClient {
 
 	private static CMFService cmfService = null;
-	private static final String BASE_URL = "http://143.198.73.107/";
+	private static final String BASE_URL = "https://api.cmfchile.cl/api-sbifv3/recursos_api/";
 	private static Logger LOGGER = LoggerFactory.getLogger(CMFClient.class);
 
 	public static CMFService getClient() {
